@@ -6,7 +6,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 APP_ADRR = 'https://rioran.github.io/ru_vowels_filter/main.html'
 
-
 @pytest.fixture(scope='module')
 def module_driver():
     chrome_driver = webdriver.Chrome(
@@ -28,7 +27,6 @@ def module_driver_with_devtools():
     chrome_driver.quit()
 
 
-# not to reopen browser everytime, only tab is provided for each test
 @pytest.fixture()
 def new_tab(module_driver):
     initial_tab = module_driver.current_window_handle
